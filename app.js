@@ -14,6 +14,7 @@
 
 let countdown;
 const timerDisplay = document.querySelector(".time-left");
+const executeButton = document.querySelector(".execute");
 // const endTime = document.querySelector(".display__end-time");
 
 function timer(seconds) {
@@ -54,11 +55,12 @@ function displayEndTime(timeStamp) {
   //     }${minutes}`;
 }
 
-// function startTimer() {
-//     const seconds = parseInt(this.dataset.time);
-//     timer(seconds);
-// }
+function startTimer() {
+  const seconds = document.querySelector(".seconds-select").value;
+  timer(seconds);
+}
 
+executeButton.addEventListener("click", startTimer);
 // buttons.forEach(button => button.addEventListener("click", startTimer));
 // document.customForm.addEventListener("submit", function (e) {
 //     e.preventDefault();
