@@ -14,10 +14,40 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- Basic navbar -->
-    <!-- Create Routine, Select Routine, Go -->
-    <!-- Basic Footer -->
-
+    <!-- Basic navbar with selectors -->
+    <section class="timer-head">
+      <section class="timer__controls">
+        <select class="seconds-select">
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+          <option value="75">75</option>
+        </select>
+        <select class="interval-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select class="rounds-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </section>
+    </section>
+    <!-- Timer/Clock with rounds, timer, and interval # -->
+    <section class="timer">
+      <p class="round-count">Round</p>
+      <h1 class="time-left"></h1>
+      <p class="interval-count">Interval</p>
+    </section>
+    <!-- Play/Pause button -->
+    <button class="execute">Play/Pause</button>
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
