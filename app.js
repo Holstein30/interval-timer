@@ -13,9 +13,8 @@
 // - all events can be unbound
 
 let countdown;
-// const timerDisplay = document.querySelector(".display__time-left");
+const timerDisplay = document.querySelector(".time-left");
 // const endTime = document.querySelector(".display__end-time");
-// const buttons = document.querySelectorAll("[data-time]");
 
 function timer(seconds) {
   // clear any exisiting timers
@@ -39,12 +38,11 @@ function timer(seconds) {
 function displayTimeLeft(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
-  console.log({ minutes, remainderSeconds });
-  // const display = `${minutes}:${
-  //     remainderSeconds < 10 ? "0" : ""
-  //     }${remainderSeconds}`;
-  // document.title = display;
-  // timerDisplay.textContent = display;
+  const display = `${minutes}:${
+    remainderSeconds < 10 ? "0" : ""
+  }${remainderSeconds}`;
+  document.title = display;
+  timerDisplay.textContent = display;
 }
 function displayEndTime(timeStamp) {
   const end = new Date(timeStamp);
