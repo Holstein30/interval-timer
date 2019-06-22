@@ -32,6 +32,17 @@ function timer(seconds) {
       clearInterval(countdown);
       return;
     }
-    console.log(secondsLeft);
+    displayTimeLeft(secondsLeft);
   }, 1000);
+}
+
+function displayTimeLeft(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  console.log({ minutes, remainderSeconds });
+  // const display = `${minutes}:${
+  //     remainderSeconds < 10 ? "0" : ""
+  //     }${remainderSeconds}`;
+  // document.title = display;
+  // timerDisplay.textContent = display;
 }
