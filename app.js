@@ -57,6 +57,9 @@ function displayEndTime(timeStamp) {
 
 function startTimer() {
   const seconds = document.querySelector(".seconds-select").value;
+  const intervalCount = document.querySelector(".interval-select").value;
+  const roundsCount = document.querySelector(".rounds-select").value;
+  console.log({ intervalCount, roundsCount });
   timer(seconds);
 }
 
