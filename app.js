@@ -35,11 +35,8 @@ function timer(seconds, intervals, rounds) {
       return;
     } else if (secondsLeft < 0 && intervalCount != 0) {
       intervalCount--;
-      console.log({ seconds, intervalCount, roundCount });
-      timer(seconds, intervalCount, roundCount);
     } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
       roundCount--;
-      console.log({ seconds, intervalCount, roundCount });
       timer(seconds, intervals, roundCount);
     }
     console.log({ seconds, intervalCount, roundCount });
