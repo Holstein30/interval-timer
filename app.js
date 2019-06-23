@@ -24,6 +24,8 @@ function timer(seconds, intervals, rounds) {
   const then = now + seconds * 1000;
   let intervalCount = intervals;
   let roundCount = rounds;
+  const intervalSeconds = seconds;
+  console.log({ intervalCount, roundCount });
   displayTimeLeft(seconds);
   displayEndTime(then);
 
@@ -35,11 +37,12 @@ function timer(seconds, intervals, rounds) {
       return;
     } else if (secondsLeft < 0 && intervalCount != 0) {
       intervalCount--;
+      // timer(intervalSeconds, intervalCount, roundCount); NOT SURE WHY NOT WORKING
     } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
       roundCount--;
-      timer(seconds, intervals, roundCount);
+      timer(intervalSeconds, intervals, roundCount);
     }
-    console.log({ seconds, intervalCount, roundCount });
+    console.log({ secondsLeft, intervalCount, roundCount });
     displayTimeLeft(secondsLeft);
   }, 1000);
 }
@@ -67,7 +70,6 @@ function startTimer() {
   const seconds = document.querySelector(".seconds-select").value;
   const intervalCount = document.querySelector(".interval-select").value;
   const roundsCount = document.querySelector(".rounds-select").value;
-  console.log({ intervalCount, roundsCount });
   timer(seconds, intervalCount, roundsCount);
 }
 
