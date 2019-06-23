@@ -17,21 +17,32 @@ const timerDisplay = document.querySelector(".time-left");
 const executeButton = document.querySelector(".execute");
 // const endTime = document.querySelector(".display__end-time");
 
-function timer(seconds) {
+function timer(seconds, intervals, rounds) {
   // clear any exisiting timers
   clearInterval(countdown);
   const now = Date.now();
   const then = now + seconds * 1000;
+  let intervalCount = intervals;
+  let roundCount = rounds;
   displayTimeLeft(seconds);
   displayEndTime(then);
 
   countdown = setInterval(() => {
     const secondsLeft = Math.round((then - Date.now()) / 1000);
     // check if we should stop it!
-    if (secondsLeft < 0) {
+    if (secondsLeft < 0 && intervalCount === 0 && roundCount === 0) {
       clearInterval(countdown);
       return;
+    } else if (secondsLeft < 0 && intervalCount != 0) {
+      intervalCount--;
+      console.log({ seconds, intervalCount, roundCount });
+      timer(seconds, intervalCount, roundCount);
+    } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
+      roundCount--;
+      console.log({ seconds, intervalCount, roundCount });
+      timer(seconds, intervals, roundCount);
     }
+    console.log({ seconds, intervalCount, roundCount });
     displayTimeLeft(secondsLeft);
   }, 1000);
 }
@@ -60,7 +71,7 @@ function startTimer() {
   const intervalCount = document.querySelector(".interval-select").value;
   const roundsCount = document.querySelector(".rounds-select").value;
   console.log({ intervalCount, roundsCount });
-  timer(seconds);
+  timer(seconds, intervalCount, roundsCount);
 }
 
 executeButton.addEventListener("click", startTimer);
