@@ -37,11 +37,13 @@ function timer(seconds, intervals, rounds) {
       return;
     } else if (secondsLeft < 0 && intervalCount != 0) {
       intervalCount--;
-      // timer(intervalSeconds, intervalCount, roundCount); NOT SURE WHY NOT WORKING
+      timer(seconds, intervalCount, rounds);
     } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
       roundCount--;
-      timer(intervalSeconds, intervals, roundCount);
+      timer(seconds, intervals, roundCount);
     }
+    // Decrease interval count after each interval
+    // Decrease
     console.log({ secondsLeft, intervalCount, roundCount });
     displayTimeLeft(secondsLeft);
   }, 1000);
@@ -80,3 +82,11 @@ executeButton.addEventListener("click", startTimer);
 //     timer(mins * 60);
 //     this.reset();
 // });
+
+// else if (secondsLeft < 0 && intervalCount != 0) {
+//       intervalCount--;
+//       // timer(intervalSeconds, intervalCount, roundCount); NOT SURE WHY NOT WORKING
+//     } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
+//       roundCount--;
+//       timer(intervalSeconds, intervals, roundCount);
+//     }
