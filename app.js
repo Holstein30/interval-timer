@@ -62,12 +62,3 @@ function startTimer() {
 }
 
 executeButton.addEventListener("click", startTimer);
-
-// if (secondsLeft < 0 && intervalCount === 0 && roundCount === 0) {
-//   clearInterval(countdown);
-//   return;
-// } else if (secondsLeft < 0 && intervalCount != 0) {
-//   intervalCount--;
-// } else if (secondsLeft < 0 && intervalCount === 0 && roundCount != 0) {
-//   roundCount--;
-// }
