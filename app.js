@@ -19,25 +19,25 @@ const executeButton = document.querySelector(".execute");
 function timer(seconds, intervals, rounds) {
   // clear any exisiting timers
   clearInterval(countdown);
-  let intervalCount = intervals;
-  let roundCount = rounds;
-  let intervalSeconds = seconds;
+  let intervalCount = parseInt(intervals);
+  let roundCount = parseInt(rounds);
+  let intervalSeconds = parseInt(seconds);
 
   countdown = setInterval(() => {
-    if (intervalSeconds < 0 && intervalCount != 0) {
-      intervalCount--;
-      intervalSeconds = seconds;
-    } else if (intervalSeconds < 0 && intervalCount === 0 && roundCount != 0) {
-      roundCount--;
-      intervalSeconds = seconds;
-      intervalCount = intervals;
-    }
-
-    if (intervalSeconds === 0 && intervalCount === 0 && roundCount === 0) {
+    if (intervalSeconds === 0 && intervalCount === 1 && roundCount === 1) {
       displayTimeLeft(intervalSeconds);
       clearInterval(countdown);
       return;
     }
+    if (intervalSeconds < 0 && intervalCount != 1) {
+      intervalCount--;
+      intervalSeconds = parseInt(seconds);
+    } else if (intervalSeconds < 0 && intervalCount === 1 && roundCount != 1) {
+      roundCount--;
+      intervalSeconds = parseInt(seconds);
+      intervalCount = parseInt(intervals);
+    }
+
     console.log({ intervalSeconds, intervalCount, roundCount });
     displayTimeLeft(intervalSeconds);
     intervalSeconds--;
