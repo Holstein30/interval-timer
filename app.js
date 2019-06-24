@@ -24,9 +24,19 @@ function timer(seconds, intervals, rounds) {
   let intervalSeconds = seconds;
 
   countdown = setInterval(() => {
-    if (intervalSeconds < 0) {
+    if (intervalSeconds < 0 && intervalCount != 0) {
+      intervalCount--;
+      intervalSeconds = seconds;
+    } else if (intervalSeconds < 0) {
       intervalSeconds = seconds;
     }
+
+    if (intervalSeconds === 0 && intervalCount === 0) {
+      displayTimeLeft(intervalSeconds);
+      clearInterval(countdown);
+      return;
+    }
+    console.log({ intervalSeconds, intervalCount });
     displayTimeLeft(intervalSeconds);
     intervalSeconds--;
   }, 1000);
