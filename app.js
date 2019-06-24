@@ -27,16 +27,18 @@ function timer(seconds, intervals, rounds) {
     if (intervalSeconds < 0 && intervalCount != 0) {
       intervalCount--;
       intervalSeconds = seconds;
-    } else if (intervalSeconds < 0) {
+    } else if (intervalSeconds < 0 && intervalCount === 0 && roundCount != 0) {
+      roundCount--;
       intervalSeconds = seconds;
+      intervalCount = intervals;
     }
 
-    if (intervalSeconds === 0 && intervalCount === 0) {
+    if (intervalSeconds === 0 && intervalCount === 0 && roundCount === 0) {
       displayTimeLeft(intervalSeconds);
       clearInterval(countdown);
       return;
     }
-    console.log({ intervalSeconds, intervalCount });
+    console.log({ intervalSeconds, intervalCount, roundCount });
     displayTimeLeft(intervalSeconds);
     intervalSeconds--;
   }, 1000);
