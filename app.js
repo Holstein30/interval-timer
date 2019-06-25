@@ -1,5 +1,3 @@
-// import ProgressRing from "./ProgressRing";
-
 let countdown;
 const timerDisplay = document.querySelector(".time-left");
 const executeButton = document.querySelector(".execute");
