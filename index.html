@@ -42,17 +42,7 @@
       </section>
     </section>
     <!-- Timer/Clock with rounds, timer, and interval # -->
-    <svg class="progress-ring" height="120" width="120">
-      <circle
-        class="progress-ring__circle"
-        stroke="black"
-        stroke-width="4"
-        fill="transparent"
-        r="52"
-        cx="60"
-        cy="60"
-      />
-    </svg>
+    <progress-ring stroke="4" radius="60" progress="0"></progress-ring>
     <section class="timer">
       <p class="round-count">Round</p>
       <h1 class="time-left"></h1>
@@ -67,6 +57,7 @@
       </p>
     <![endif]-->
 
-    <script src="./app.js" async defer></script>
+    <script type="module" src="./app.js" async defer></script>
+    <script type="module" src="./ProgressRing.js" async defer></script>
   </body>
 </html>
