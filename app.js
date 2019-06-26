@@ -47,6 +47,10 @@ function startTimer() {
   timer(seconds, intervalCount, roundsCount);
 }
 
+// Display Round
+
+// Display Interval
+
 executeButton.addEventListener("click", startTimer);
 
 // App - Converting to Modular Design
