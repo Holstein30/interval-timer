@@ -44,3 +44,16 @@ execute.focus {
   background: rgba(0, 0, 0, 0.2);
   outline: 0;
 }
+
+select {
+  appearance: none;
+  outline: 0;
+  background: #fff;
+  background-image: none;
+  color: #42a5f5;
+  width: 20vw;
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+}
