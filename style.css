@@ -9,6 +9,7 @@ body {
   margin: 0;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3em;
 }
 
 .time-left {
@@ -23,6 +24,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  color: #fff;
 }
 
 .execute {
@@ -56,4 +58,8 @@ select {
   cursor: pointer;
   border: 1px solid black;
   border-radius: 3px;
+}
+
+.timer-head {
+  margin: 10vh auto;
 }
