@@ -65,5 +65,11 @@ select {
 }
 
 .timer-head {
-  margin: 10vh auto;
+  margin: 100px auto;
+}
+
+.timer__controls {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
 }
