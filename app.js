@@ -1,6 +1,8 @@
 let countdown;
 const timerDisplay = document.querySelector(".time-left");
 const executeButton = document.querySelector(".execute");
+const roundDisplay = document.querySelector(".round-count");
+const intervalDisplay = document.querySelector(".interval-count");
 
 function timer(seconds, intervals, rounds) {
   // clear any exisiting timers
@@ -25,6 +27,7 @@ function timer(seconds, intervals, rounds) {
     }
 
     console.log({ intervalSeconds, intervalCount, roundCount });
+    displayRoundsLeft(roundCount);
     displayTimeLeft(intervalSeconds);
     intervalSeconds--;
   }, 1000);
@@ -47,9 +50,14 @@ function startTimer() {
   timer(seconds, intervalCount, roundsCount);
 }
 
-// Display Round
+// Display Round Count
 
-// Display Interval
+function displayRoundsLeft(currentRound) {
+  const display = `Rounds Left: ${currentRound}`;
+  roundDisplay.textContent = display;
+}
+
+// Display Interval Count
 
 executeButton.addEventListener("click", startTimer);
 
