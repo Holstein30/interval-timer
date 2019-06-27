@@ -14,6 +14,8 @@ function timer(seconds, intervals, rounds) {
   countdown = setInterval(() => {
     if (intervalSeconds === 0 && intervalCount === 1 && roundCount === 1) {
       displayTimeLeft(intervalSeconds);
+      displayRoundsLeft(0);
+      displayIntervalsLeft(0);
       clearInterval(countdown);
       return;
     }
