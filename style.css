@@ -65,7 +65,7 @@ select {
 }
 
 .timer-head {
-  margin: 100px auto;
+  margin-top: 100px;
 }
 
 .timer__controls {
